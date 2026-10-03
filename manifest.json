@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "MD Web performance",
+  "version": "2.0.0",
+  "description": "Panel flotante que mide en tiempo real la performance y el peso de cada página mientras navegás. 100% local.",
+  "permissions": ["debugger", "tabs", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "MD Web performance: mostrar/ocultar panel" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_start" }
+  ]
+}
